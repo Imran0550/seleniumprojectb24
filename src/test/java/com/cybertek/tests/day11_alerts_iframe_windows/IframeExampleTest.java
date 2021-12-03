@@ -46,8 +46,9 @@ public class IframeExampleTest {
      String url2 = "http://practice.cybertekschool.com/nested_frames";
      driver.get(url2);
      //find out the count of frames in this page
-        List<WebElement> frames = driver.findElements(By.tagName("frame"));
-        System.out.println("count of frames = " + frames.size());
+        List<WebElement> frame = driver.findElements(By.tagName("frame"));
+        System.out.println("frames = " + frame.size());
+
 
         //Switch to bottom frame by name
         driver.switchTo().frame("frame-bottom");
