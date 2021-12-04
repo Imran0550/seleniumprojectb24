@@ -1,5 +1,6 @@
 package com.cybertek.tests.day13_faker_practice_browserutil_properties;
 
+import com.cybertek.utils.BrowserUtil;
 import com.cybertek.utils.WebDriverFactory;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
@@ -72,6 +73,10 @@ int count =0;
     signUp.click();
 
     // verify the message
+
+
+
+    BrowserUtil.sleep(5);
 
     WebElement message = driver.findElement(By.tagName("p"));
     String message1 = message.getText();
