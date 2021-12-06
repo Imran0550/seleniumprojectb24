@@ -1,5 +1,7 @@
 package com.cybertek.tests.day15_properties_driverutil_testbase;
 
+import com.cybertek.utils.ConfigurationReader;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
@@ -23,5 +25,17 @@ public class PropertyFileTest {
         System.out.println(prompts.getProperty("browser"));
         System.out.println(prompts.getProperty("webTableUrl"));
         System.out.println(prompts.getProperty("env"));
+    }
+
+    @Test
+    public void configurationReaderUnitTest(){
+        System.out.println(ConfigurationReader.getProperty("browser"));
+        String read = ConfigurationReader.getProperty("env");
+        System.out.println(read);
+
+        Assert.assertEquals(ConfigurationReader.getProperty("browser"),"chrome");
+        Assert.assertEquals(ConfigurationReader.getProperty("env"),"qa");
+
+        Assert.assertEquals(ConfigurationReader.getProperty("browser"),null);
     }
 }
