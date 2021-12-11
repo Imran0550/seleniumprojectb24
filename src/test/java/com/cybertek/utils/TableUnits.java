@@ -20,7 +20,7 @@ public class TableUnits {
     public void TC001(){
 
         Driver.getDriver().get(ConfigurationReader.getProperty("cyber"));
-        verifyOrders(Driver.getDriver(), "John");
+        verifyOrders(Driver.getDriver(), "Frank");
 
     }
 }

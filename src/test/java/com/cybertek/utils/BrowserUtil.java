@@ -1,6 +1,12 @@
 package com.cybertek.utils;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 public class BrowserUtil {
+
+
     /**
      * this method is used tp pause the code for given seconds
      * It is static method so we can call:
@@ -18,5 +24,13 @@ public class BrowserUtil {
             e.printStackTrace();
             System.out.println("Exception happened in sleep method");
         }
+    }
+
+    public static void scrollDown(int num) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0,5000)");
+
+
+
     }
 }
