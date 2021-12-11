@@ -26,11 +26,17 @@ public class BrowserUtil {
         }
     }
 
-    public static void scrollDown(int num) {
+    public static void scrollDown(int pixels) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("window.scrollBy(0,5000)");
+        js.executeScript("window.scrollBy(0,"+pixels+")");
 
 
 
+    }
+
+    public static void scrollDownElement(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
+        js.executeScript("arguments[0].scrollIntoView(true)",element);
     }
 }
